@@ -18,7 +18,7 @@
             <th>#</th>
             <th>Nombre</th>
             <th>Casa</th>
-            <th class="text-center">Opciones</th>
+            <th class="text-right">Opciones</th>
           </tr>
         </thead>
         <tbody>
@@ -26,13 +26,19 @@
             <td>{{ i + 1 }}</td>
             <td>{{ heroes[key].nombre }}</td>
             <td>{{ heroes[key].casa }}</td>
-            <td class="text-center">
+            <td class="text-right">
               <button [routerLink]="['/heroe', key]" class="btn btn-outline-primary" type="button">Editar</button>
               <button (click)="eliminar(key)" class="btn btn-outline-danger" type="button">Borrar</button>
             </td>
           </tr>
         </tbody>
       </table>
+      <div *ngIf="(heroes | keys).length === 0 && !loading" class="alert alert-info" role="alert">
+        <strong>No hay</strong> registros.
+      </div>
+      <div *ngIf="loading" class="alert alert-warning" role="alert">
+        <strong>Cargando...</strong>por favor espere
+      </div>
     </div>
   </div>
 </div>

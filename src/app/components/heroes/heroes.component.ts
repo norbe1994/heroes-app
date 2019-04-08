@@ -12,11 +12,13 @@ export class HeroesComponent implements OnInit {
 
 
   heroes: Heroe[] = []
+  loading: boolean = true
 
   constructor(private _heroesService: HeroesService) {
     this._heroesService.getHeroes()
       .subscribe(data => {
         this.heroes = data
+        this.loading = false
       })
   }
 

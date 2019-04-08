@@ -49,7 +49,7 @@ export class HeroeComponent implements OnInit {
     if (this.nuevo) {
       this._heroesService.nuevoHeroe(this.heroe)
         .subscribe(data => {
-          this.router.navigate(['/heroes'])
+          this.router.navigate(['/heroe', data.name])
         },
           error => console.log(error))
     } else {
