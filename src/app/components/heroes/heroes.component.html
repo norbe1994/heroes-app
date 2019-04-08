@@ -16,22 +16,16 @@
         <thead class="thead-dark">
           <tr>
             <th>#</th>
-            <th>First</th>
-            <th>Last</th>
-            <th>Handle</th>
+            <th>Nombre</th>
+            <th>Casa</th>
+            <th>Opciones</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+          <tr *ngFor="let key of heroes | keys; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ heroes[key].nombre }}</td>
+            <td>{{ heroes[key].casa }}</td>
             <td></td>
           </tr>
         </tbody>
