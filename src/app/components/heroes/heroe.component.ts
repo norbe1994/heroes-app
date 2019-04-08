@@ -14,7 +14,7 @@ export class HeroeComponent implements OnInit {
   heroe: Heroe = {
     nombre: '',
     bio: '',
-    casa: 'marvel',
+    casa: 'Marvel',
   }
 
   nuevo: boolean = false
@@ -41,7 +41,7 @@ export class HeroeComponent implements OnInit {
     this.router.navigate(['/heroe', 'nuevo'])
 
     form.reset({
-      casa: 'marvel'
+      casa: 'Marvel'
     })
   }
 
@@ -49,7 +49,7 @@ export class HeroeComponent implements OnInit {
     if (this.nuevo) {
       this._heroesService.nuevoHeroe(this.heroe)
         .subscribe(data => {
-          this.router.navigate(['/heroe', data.name])
+          this.router.navigate(['/heroes'])
         },
           error => console.log(error))
     } else {

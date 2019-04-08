@@ -67,4 +67,16 @@ export class HeroesService {
         })
       )
   }
+
+  eliminar(key$: string) {
+    let url = `${this.heroeUrl}/${key$}.json`
+
+    return this.http.delete(url)
+      .pipe(
+        map(res => {
+          console.log(res)
+          return res
+        })
+      )
+  }
 }
